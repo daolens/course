@@ -18,7 +18,12 @@ const TutorialBlock = ({
   const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (containerRef.current && isVisible && !isFirst) {
-      containerRef.current.scrollIntoView({ behavior: "smooth" });
+      const yOffset = 0;
+      const y =
+        containerRef.current.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   }, [isVisible, isFirst]);
 
