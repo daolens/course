@@ -73,6 +73,7 @@ export default function CodeBlock(props: Props) {
 
   return (
     <>
+    <br />
       <div className="flex flex-col rounded-2xl p-0">
         <SandpackProvider
           files={{
@@ -90,6 +91,7 @@ export default function CodeBlock(props: Props) {
           </div>
         </SandpackProvider>
       </div>
+      <br />
     </>
   );
 }

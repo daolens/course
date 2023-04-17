@@ -8,12 +8,14 @@ type Props = {
 };
 
 const Img = ({ src, width, alt }: Props) => {
-  return (
+  return (<>
+    <br/><br/>
     <img
       src={src}
       className={classNames("w-4/5 mx-auto", width === "half" && "md:w-1/2")}
       alt={alt}
-    />
+    /><br/><br/>
+    </>
   );
 };
 
