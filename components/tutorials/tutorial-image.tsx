@@ -11,7 +11,7 @@ const Img = ({ src, width, alt }: Props) => {
   return (
     <img
       src={src}
-      className={classNames("w-full", width === "half" && "md:w-1/2")}
+      className={classNames("w-4/5 mx-auto", width === "half" && "md:w-1/2")}
       alt={alt}
     />
   );
