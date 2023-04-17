@@ -234,7 +234,6 @@ export const NODE_TUTORIAL = [
 
         <CodeBlock>
           {`
-          
           console.log('Hey there,' , process.argv[2]); 
           //  process.argv.forEach((val, index) => {
           //   console.log(\`\${index}: \${val}\`);
@@ -257,8 +256,7 @@ export const NODE_TUTORIAL = [
       In Node.js, we often don’t need to use console input in our programs since we are usually working with programs that have an easy-to-use front-end. However, sometimes we do need to use the console for input. For that, we have the readline module. Let’s see how that works. Hit the RUN button to get started.
 
       <CodeBlock>
-          {`
-          
+          {`         
           const readline = require('readline');
 
           const rl = readline.createInterface({
@@ -273,7 +271,6 @@ export const NODE_TUTORIAL = [
             
             rl.close();
           });
-          
           `}
         </CodeBlock>
 
@@ -356,7 +353,6 @@ export const NODE_TUTORIAL = [
             As Node.js improves over time, new features get added to it. While it may not be possible to keep track of them all, we will discuss a few more methods for console below.
             <CodeBlock>
               {`
-              
               console.time('For loop time');
               for (let i = 0; i < 100; i++) {
                 // processing
@@ -364,7 +360,6 @@ export const NODE_TUTORIAL = [
               console.timeEnd('For loop time');
               
               console.table([{ "Fruit": "Apple", "Quantity": 5 }, { "Fruit": "Mango", "Quantity": 7 }]);
-              
               `}
             </CodeBlock>
 
@@ -438,9 +433,7 @@ It’s good practice to write modules as it promotes cleanliness of your code an
       
       <CodeBlock>
         {`
-        
-        const myModule = require("moduleName")
-        
+        const myModule = require("moduleName") 
         `}
       </CodeBlock>
 
@@ -452,21 +445,17 @@ It’s good practice to write modules as it promotes cleanliness of your code an
       
       <CodeBlock>
         {`
-        
         const fs = require("fs")
         fs.readFile("demofile.txt" , {encoding : 'utf-8'} , function(err,data) {
         if(err) console.log(err)
         console.log(data)
         })
-        
         `}
       </CodeBlock>
       now save it as “fsExample.js” and run it on your command line:
       <CodeBlock>
         {`
-        
         node fsExample
-        
         `}
       </CodeBlock>
 
@@ -486,9 +475,7 @@ First we check whether there are errors(maybe error in reading file or etc.) and
 Lets install express as an example
 <CodeBlock>
         {`
-        
         npm i express
-        
         `}
       </CodeBlock>
 
@@ -496,9 +483,7 @@ Lets install express as an example
 
       <CodeBlock>
         {`
-        
         const express = require('express')
-        
         `}
       </CodeBlock>
       <H3 heading="Using local modules" />
@@ -508,10 +493,7 @@ Lets install express as an example
 
             <CodeBlock>
         {`
-        
         module.exports = <Object to be exported> 
-
-        
         `}
       </CodeBlock>
       The most simple example
@@ -520,21 +502,15 @@ Lets install express as an example
       message.js:
       <CodeBlock>
         {`
-        
-        module.exports = "Hello World" 
-
-        
+        module.exports = "Hello World"        
         `}
       </CodeBlock>
       <br/>
       app.js:
       <CodeBlock>
         {`
-        
         const message = require('./message.js')
 console.log(message)
-
-        
         `}
       </CodeBlock>
 
@@ -544,12 +520,9 @@ To export a function, the code is similar:
 message.js
 <CodeBlock>
         {`
-        
         module.exports = function() {
           console.log("Hello World")
           }
-
-        
         `}
       </CodeBlock>
 
@@ -557,10 +530,8 @@ message.js
       app.js
       <CodeBlock>
         {`
-        
         const message = require("./message.js")
         message();
-        
         `}
       </CodeBlock>
 
@@ -578,7 +549,6 @@ module.exports
 message.js:
 <CodeBlock>
         {`
-        
         module.exports.sayHello = function() {
           console.log('Hello')
           }
@@ -597,13 +567,11 @@ message.js:
       app.js:
       <CodeBlock>
         {`
-        
         const message = require('./message.js')
         message.sayHello()
         message.sayCustomMessage('Goodbye!');
         console.log(message.myVariable)
         console.log(message.firstName + ' ' + message.lastName)
-        
         `}
       </CodeBlock>
 
@@ -611,7 +579,6 @@ message.js:
 
       <CodeBlock>
         {`
-        
         const filesystem = require('fs') // core module
         const express = require('express') // npm module
         const server = require('./boot/server.js') // server.js file with a relative path down the tree
@@ -620,7 +587,6 @@ message.js:
         const server = require('./boot/server') // file if there's the server.js file
         const routes = require('../routes') // index.js inside routes folder if there's no routes.js file
         const databaseConfigs = require('./configs/database.json') // JSON file
-        
         `}
       </CodeBlock>
 
