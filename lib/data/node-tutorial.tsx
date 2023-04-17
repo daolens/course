@@ -49,7 +49,7 @@ export const NODE_TUTORIAL = [
       <H3 heading="Step 1: Download Node.js" />
       <Img src="/images/img1.png" alt="node" width="full" />
       <TutorialParagraph>
-        <a
+      {" "}<a
           href="https://nodejs.org/en/download"
           target="_blank"
           className="hover:underline text-indigo-600"
@@ -59,7 +59,7 @@ export const NODE_TUTORIAL = [
         First, before you install Node.js, you need to make sure you have admin
         privileges to your system (make sure you can download and open programs
         on your computer). Then, you can go over to the
-        <a
+        {" "}<a
           href="https://nodejs.org/en/download/"
           target="_blank"
           className="hover:underline text-indigo-600"
@@ -132,7 +132,7 @@ export const NODE_TUTORIAL = [
         Subsequently, verify npm is installed by running “npm -v” in the
         terminal. NPM is a package manager that comes with Node.js, which you
         can learn more about
-        <a
+        {" "}<a
           href="https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/"
           target="_blank"
           className="hover:underline text-indigo-600"
