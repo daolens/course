@@ -769,7 +769,7 @@ Open your terminal and follow along:
       </ol>
 
 
-Package.json is a file that gives the necessary information to npm which allows it to identify the project as well as handle the project's dependencies.
+Package.json is a file that gives the necessary information to npm which allows it to identify the project as well as handle the project&apos;s dependencies.
 npm init will prompt you to enter some information such as the app name, description, version, author, and keyword.
 You should have something like this:
 <Img src="/images/img12.png" alt="node" width="half" /> <br />
@@ -878,7 +878,7 @@ module.exports = mongoose.model('Books', BookSchema);
       ‘/books’ has two methods GET and POST. While ‘/books/bookId’ has GET, PUT, and DELETE.<br />
       As you can see, we required the controller so each of the route methods can call its respective handler function. <br />
 
-      Let's jump back to our code and get this started! Open the bookListRoutes.js file in the routes folder and copy/paste the code snippet below
+      Let&apos;s jump back to our code and get this started! Open the bookListRoutes.js file in the routes folder and copy/paste the code snippet below
 
       <CodeBlock>
         {`
