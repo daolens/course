@@ -1,20 +1,20 @@
-import Head from 'next/head'
-import { Nunito } from 'next/font/google'
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import Head from "next/head";
+import { Nunito } from "next/font/google";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
-const nunito = Nunito({ subsets: ['latin'] })
-const transitionSec = 0.3
-const transitionMs = 300
+const nunito = Nunito({ subsets: ["latin"] });
+const transitionSec = 0.3;
+const transitionMs = 300;
 
 export default function Home() {
-  const [justify, setJustify] = useState('justify-center')
-  const [opacity, setOpacity] = useState([0, 0])
-  const [hiddens, setHiddens] = useState([1, 1])
-  const [nextBtn, setNextBtn] = useState(0)
+  const [justify, setJustify] = useState("justify-center");
+  const [opacity, setOpacity] = useState([0, 0]);
+  const [hiddens, setHiddens] = useState([1, 1]);
+  const [nextBtn, setNextBtn] = useState(0);
 
   async function wait(ms: number) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       setTimeout(resolve, ms);
     });
   }
@@ -27,52 +27,104 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${nunito.className} w-full min-h-screen flex flex-col items-center px-4 bg-white bg-opacity-95 text-black`}>
-        <motion.div layout className={`w-full md:w-1/3 flex flex-col min-h-screen ${justify} py-32 gap-32`}>
-          <motion.div className="flex flex-col gap-4" layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ opacity: { duration: transitionSec } }}>
-            <div>1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quae illum placeat sit iusto deleniti perferendis nihil reprehenderit provident? Ratione libero consectetur facilis vitae sint, velit quisquam debitis, amet maxime aperiam dignissimos doloremque commodi quod eos illo. At error in consequuntur accusantium reprehenderit quasi, amet neque provident omnis qui. Sit!</div>
+      <main
+        className={`${nunito.className} w-full min-h-screen flex flex-col items-center px-4 bg-white bg-opacity-95 text-black`}
+      >
+        <motion.div
+          layout
+          className={`w-full md:w-1/3 flex flex-col min-h-screen ${justify} py-32 gap-32`}
+        >
+          <motion.div
+            className="flex flex-col gap-4"
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ opacity: { duration: transitionSec } }}
+          >
+            <div>
+              1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
+              quae illum placeat sit iusto deleniti perferendis nihil
+              reprehenderit provident? Ratione libero consectetur facilis vitae
+              sint, velit quisquam debitis, amet maxime aperiam dignissimos
+              doloremque commodi quod eos illo. At error in consequuntur
+              accusantium reprehenderit quasi, amet neque provident omnis qui.
+              Sit!
+            </div>
             <AnimatePresence>
-              {nextBtn == 0 && <div>
-                <button
-                  className="bg-green-700 px-8 py-2 rounded-lg text-white font-semibold"
-                  onClick={async () => {
-                    setJustify("justify-start")
-                    setNextBtn(1)
-                    setHiddens([0, 1])
-                    await wait(transitionMs)
-                    setOpacity([1, 0])
-                  }}>Next</button>
-              </div>}
+              {nextBtn == 0 && (
+                <div>
+                  <button
+                    className="bg-green-700 px-8 py-2 rounded-lg text-white font-semibold"
+                    onClick={async () => {
+                      setJustify("justify-start");
+                      setNextBtn(1);
+                      setHiddens([0, 1]);
+                      await wait(transitionMs);
+                      setOpacity([1, 0]);
+                    }}
+                  >
+                    Next
+                  </button>
+                </div>
+              )}
             </AnimatePresence>
           </motion.div>
-          <motion.div className={`${hiddens[0] == 1 ? 'hidden' : ''} flex flex-col gap-4`} layout initial={{ opacity: 0 }} animate={{ opacity: opacity[0] }} transition={{ opacity: { duration: transitionSec } }}>
-            <div>2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam doloribus provident quibusdam ipsa vel ea modi illo doloremque tempora fugit?</div>
+          <motion.div
+            className={`${hiddens[0] == 1 ? "hidden" : ""} flex flex-col gap-4`}
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: opacity[0] }}
+            transition={{ opacity: { duration: transitionSec } }}
+          >
+            <div>
+              2. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Quisquam doloribus provident quibusdam ipsa vel ea modi illo
+              doloremque tempora fugit?
+            </div>
             <AnimatePresence>
-              {nextBtn == 1 && <div>
-                <button
-                  className="bg-green-700 px-8 py-2 rounded-lg text-white font-semibold"
-                  onClick={async () => {
-                    setHiddens([0, 0])
-                    setNextBtn(2)
-                    // await wait(100)
-                    setOpacity([1, 1])
-                  }}>Next</button>
-              </div>}
+              {nextBtn == 1 && (
+                <div>
+                  <button
+                    className="bg-green-700 px-8 py-2 rounded-lg text-white font-semibold"
+                    onClick={async () => {
+                      setHiddens([0, 0]);
+                      setNextBtn(2);
+                      // await wait(100)
+                      setOpacity([1, 1]);
+                    }}
+                  >
+                    Next
+                  </button>
+                </div>
+              )}
             </AnimatePresence>
           </motion.div>
-          <motion.div className={`${hiddens[1] == 1 ? 'hidden' : ''} flex flex-col gap-4`} layout initial={{ opacity: 0 }} animate={{ opacity: opacity[1] }} transition={{ opacity: { duration: transitionSec } }}>
-            <div>3. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam doloribus provident quibusdam ipsa vel ea modi illo doloremque tempora fugit?</div>
+          <motion.div
+            className={`${hiddens[1] == 1 ? "hidden" : ""} flex flex-col gap-4`}
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: opacity[1] }}
+            transition={{ opacity: { duration: transitionSec } }}
+          >
+            <div>
+              3. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Quisquam doloribus provident quibusdam ipsa vel ea modi illo
+              doloremque tempora fugit?
+            </div>
             <div>
               <button
                 className="bg-green-700 px-8 py-2 rounded-lg text-white font-semibold"
                 onClick={async () => {
-                  setHiddens([0, 0])
-                  setOpacity([1, 1])
-                }}>Next</button>
+                  setHiddens([0, 0]);
+                  setOpacity([1, 1]);
+                }}
+              >
+                Next
+              </button>
             </div>
           </motion.div>
         </motion.div>
       </main>
     </>
-  )
+  );
 }
