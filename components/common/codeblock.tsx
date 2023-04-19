@@ -83,7 +83,7 @@ export default function CodeBlock(props: Props) {
         >
           <div className="flex rounded-2xl bg-white">
             <SandpackLayout style={{ borderRadius: "6px" }}>
-              <div className="flex min-w-[300px] max-w-[340px] md:max-w-[900px]">
+              <div className="flex min-w-[300px] max-w-[340px] md:max-w-[550px]">
                 <SandpackCodeViewer ref={codemirrorInstance} />
               </div>
               <Prettier codemirrorInstance={codemirrorInstance} />

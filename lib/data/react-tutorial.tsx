@@ -462,6 +462,81 @@ function MyButton() {
     </TutorialBody>
   </>,
   <>
+    <SectionHeading heading="Start a New React Project" />
+    <TutorialBody>
+      <TutorialParagraph>
+        If you want to build a new app or a new website fully with React, we
+        recommend picking one of the React-powered frameworks popular in the
+        community. Frameworks provide features that most apps and sites
+        eventually need, including routing, data fetching, and generating HTML.
+      </TutorialParagraph>
+      <TutorialParagraph>
+        We will show you how to start a new project with <b>NextJS</b>.
+      </TutorialParagraph>
+      <TutorialParagraph>
+        Next.js is a full-stack React framework. It’s versatile and lets you
+        create React apps of any size—from a mostly static blog to a complex
+        dynamic application. To create a new Next.js project, run in your
+        terminal:
+      </TutorialParagraph>
+      <CodeBlock>{`npx create-next-app@latest`}</CodeBlock>
+      <TutorialParagraph>
+        Note: Ensure node is installed in your system before running this. Click{" "}
+        <a
+          href="https://nodejs.org/en/download"
+          target="_blank"
+          className="hover:underline text-indigo-600"
+        >
+          here
+        </a>{" "}
+        to isntall node.
+      </TutorialParagraph>
+      <TutorialParagraph>
+        After running the commend it will ask you to enter project name. Enter
+        whatever name you want to give.
+      </TutorialParagraph>
+      <TutorialParagraph>
+        Then it will ask whether to use TypeScript or not, if you are
+        comfortable using it select `yes` else you can select `No`.
+      </TutorialParagraph>
+      <TutorialParagraph>
+        Select `Yes` for ESLint. It will help you point out any errors in your
+        project.
+      </TutorialParagraph>
+      <TutorialParagraph>
+        Next promt it will ask whether to use TailwindCSS or not. Again
+        depending on your familiarity with it you can select `Yes` or `No`.
+      </TutorialParagraph>
+      <TutorialParagraph>Select `No` for `src/` directory.</TutorialParagraph>
+      <TutorialParagraph>
+        Select `No` for experimental `app/` directory.
+      </TutorialParagraph>
+      <TutorialParagraph>
+        Simply press enter for `What import alias would you like configured?`
+        prompt.
+      </TutorialParagraph>
+      <TutorialParagraph>
+        Now you will see dependencies will start installing for your project. It
+        will create a new folder with whatever project name you had passed in
+        the first step. Navigate to that folder and run the following command.
+      </TutorialParagraph>
+      <CodeBlock>{"npm run dev"}</CodeBlock>
+      <TutorialParagraph>
+        Open{" "}
+        <a
+          href="http://localhost:3000/"
+          target="_blank"
+          className="hover:underline text-indigo-600"
+        >
+          http://localhost:3000
+        </a>{" "}
+        on your browser and you will see your application running! You can make
+        changes to `/pages/index.tsx` and upon saving they will reflect in your
+        browser.
+      </TutorialParagraph>
+    </TutorialBody>
+  </>,
+  <>
     <SectionHeading heading="Next Steps" />
     <TutorialParagraph>
       By now, you know the basics of how to write React code!

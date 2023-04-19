@@ -12,7 +12,7 @@ const Img = ({ src, width, alt }: Props) => {
     <br/><br/>
     <img
       src={src}
-      className={classNames("w-4/5 mx-auto", width === "half" && "md:w-1/2")}
+      className={classNames("w-full mx-auto", width === "half" && "")}
       alt={alt}
     /><br/><br/>
     </>
